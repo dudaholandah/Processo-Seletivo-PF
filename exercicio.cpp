@@ -7,10 +7,11 @@ using namespace std;
 const int MAX {10005};
 
 vector<bool> visited(MAX);
-vector<int> adj[MAX];
+vector<int> adj[MAX]; // conexao
 pii coord[MAX];
 int m;
 
+// busca por profundidade
 void dfs(int s){
     visited[s] = true;
 
@@ -19,6 +20,7 @@ void dfs(int s){
     }
 }
 
+// checa se a distancia euclidiana eh menor ou igual ao alcance 'm'
 bool is_connected(pii a, pii b){
     return sq(a.first - b.first) + sq(a.second - b.second) <= sq(m);
 }
@@ -37,6 +39,7 @@ int main(){ sws;
 
     for(int i=0; i<n; i++){
         for(int j=i+1; j<n; j++){
+            // se tiver alcance add uma conexao entre as torres 
             if(is_connected(coord[i], coord[j])){
                 adj[i].push_back(j);
                 adj[j].push_back(i);
@@ -46,6 +49,7 @@ int main(){ sws;
 
     dfs(0);
 
+    // checa se o grafo nao eh conectado
     for(int i=0; i<n; i++){
         if(!visited[i]){
             return cout << 'N' << endl, 0;
