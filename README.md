@@ -8,7 +8,7 @@ A resolução desse exercício em `C++` pode ser encontrada em [_Resolução_](e
 
 ## Explicação
 
-O objetivo do exercício é garantir que exista uma _cobertura total_ do arquipélogo. Para isso, é necessário que todas as torres estejam conectadas, isto é, qualquer torre deve conseguir alcançar todas as outras torres, diretamente ou indiretamente (alcançando uma torre que consegue alcançar a próxima).
+O objetivo do exercício é garantir que exista uma _cobertura total_ do arquipélago. Para isso, é necessário que todas as torres estejam conectadas, isto é, qualquer torre deve conseguir alcançar todas as outras torres, diretamente ou indiretamente (alcançando uma torre que consegue alcançar a próxima).
 
 Trata-se de um exercício de grafos, sendo as torres os nós, e o alcance entre elas as arestas. Precisamos descobrir se esse grafo é conectado, ou seja, dado quaisquer dois nós distintos, eles possuem um caminho entre eles. Para descobrir isso, é possível fazer uma _DFS_ (Busca por Profundidade), começando de qualquer nó. E se for possível atingir todos os outros nós, então temos um grafo conectado, ou seja, temos uma _cobertura total_.
 
